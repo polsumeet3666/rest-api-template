@@ -5,4 +5,10 @@ router.get("/", (req, res) => {
 	res.send("Hello World");
 });
 
+router.post("/profile", function(req, res, next) {
+	//console.log(req.body);
+	res.json(req.body);
+	next();
+});
+
 module.exports = router;

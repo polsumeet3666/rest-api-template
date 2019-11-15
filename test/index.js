@@ -10,7 +10,23 @@ describe("api test", () => {
 			.expect(200)
 			.end(function(err, res) {
 				expect(res.body);
-				done(err);
+				done();
+			});
+	});
+
+	it("post /profile", done => {
+		let book = {
+			title: "book1",
+			author: "sam"
+		};
+		server
+			.post("/profile")
+			.send(book)
+			.expect(200)
+			.end((err, res) => {
+				expect(res.body);
+				//console.log(res.body);
+				done();
 			});
 	});
 });
